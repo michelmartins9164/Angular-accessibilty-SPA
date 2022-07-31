@@ -14,8 +14,8 @@ export class HeaderHomeComponent implements OnInit {
 
   AddFontSize(): void {
     let fontStorage:number = Number(localStorage.getItem('fontSize'));
-    if(fontStorage < 22) {
-      localStorage.setItem('fontSize', `${fontStorage + 2}`);
+    if(fontStorage <= 22) {
+      localStorage.setItem('fontSize', `${fontStorage + 3}`);
       FontSizeUpdate();
     }
   }
@@ -23,8 +23,8 @@ export class HeaderHomeComponent implements OnInit {
   DownFontSize():void {
     let fontStorage:number = Number(localStorage.getItem('fontSize'));
 
-    if(fontStorage > 16) {
-      localStorage.setItem('fontSize', `${fontStorage - 2}`);
+    if(fontStorage >= 10) {
+      localStorage.setItem('fontSize', `${fontStorage - 3}`);
       FontSizeUpdate();
     }
   }
